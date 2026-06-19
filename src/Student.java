@@ -1,31 +1,25 @@
 public class Student{
     String name;
     String id;
-    double gpa;
+    Student classMate;
 
-    Student(String name, String id) {
-        this.name = name;
-        this.id = id;
+    Student(String n, String i, Student cm){
+        name = n;
+        id = i;
+        classMate = cm;
     }
-    void printInfo(){
+
+    void setClassMate(Student cm){
+        classMate = cm;
+    }
+
+    void printStudent(){
         System.out.println("Name: " + name);
         System.out.println("ID: " + id);
-        System.out.println("GPA: " + gpa);
+        if(classMate != null){
+            System.out.println("Classmate: " + classMate.name);
+        } else {
+            System.out.println("No classmate");
+        }
     }
-
-    boolean isPass(){
-        return gpa >= 2.0;
-    }
-
-    void setGPA(double newGPA){
-        gpa = newGPA;
-    }
-}
-
-public void main(String[] args) {
-    Student student1 = new Student("Alice", "S12345");
-    student1.setGPA(3.5);
-
-    student1.printInfo();
-    System.out.println("Pass: " + student1.isPass());
 }
