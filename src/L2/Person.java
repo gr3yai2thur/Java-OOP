@@ -61,9 +61,9 @@ public class Person {
     public String getGig(Person p) {
         if (p.gender == this.gender) {
             String result = "";
-            for (int i = 0; i < gig.length; i++) {
-                if (gig[i] != null) {
-                    result += gig[i].name + " ";
+            for (int i = 0; i < p.gig.length; i++) {
+                if (p.gig[i] != null) {
+                    result += p.gig[i].name + " ";
                 }
             }
             return result;
@@ -86,22 +86,20 @@ public class Person {
         }
     }
 
-    public String getPersonInfo(Person requester) {
+    public void getPersonInfo(Person requester) {
         String fanName;
-        if (this.fan != null) {
-            fanName = this.fan.name;
+        if (requester.fan != null) {
+            fanName = requester.fan.name;
         } else {
             fanName = "No fan";
         }
 
-        String info = "=====================\n";
-        info += "Name: " + this.name + "\n";
-        info += "Gender: " + this.gender + "\n";
-        info += "Phone: " + this.getPhone(requester) + "\n";
-        info += "Fan: " + fanName + "\n";
-        info += "Gigs: " + this.getGig(requester) + "\n";
-        info += "=====================";
-
-        return info;
+        System.out.println("=====================");
+        System.out.println("Name: " + requester.name);
+        System.out.println("Gender: " + requester.gender);
+        System.out.println("Phone: " + this.getPhone(requester));
+        System.out.println("Fan: " + fanName);
+        System.out.println("Gigs: " + this.getGig(requester));
+        System.out.println("=====================");
     }
 }

@@ -18,11 +18,8 @@ public record DemoPerson() {
 
         p1.setGig(p4);
         p1.setGig(p5);
-        p1.setGig(p6);
-        System.out.println(p1.getFan(p3));
-        System.out.println(p1.getGig(p1));
-
-        System.out.println(p1.getPersonInfo(p2));
+        p1.removeGig(p5);
+        p2.getPersonInfo(p1);
     }
         
 }
